@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="./assets/alertifyjs/css/alertify.min.css">
         <link rel="stylesheet" href="./assets/alertifyjs/css/themes/bootstrap.min.css">
        <!-- Termina el css!-->
-        <title>Inicia Sesion</title>
+        <title>Profact</title>
         <link rel="shortcut icon" type="image/x-icon" href="./assets/img/icono.png">
         
     </head>
