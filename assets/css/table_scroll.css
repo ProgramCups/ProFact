@@ -1,0 +1,5 @@
+.table-wrapper-scroll-y {
+  display: block;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
