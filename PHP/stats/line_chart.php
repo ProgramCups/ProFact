@@ -4,10 +4,7 @@
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
-        <script src="./assets/js/jquery-3.2.1.min.js"></script>
-        <script src="../../assets/chart/Chart.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Comprobando</title>
     </head>
     <body>
         <div>
@@ -19,7 +16,7 @@
 <?php
 $labels=["Diciembre", "Noviembre", "Octubre", "Septiembre", "Agosto", "Julio", "Junio", "Mayo", "Abril", "Marzo","Febrero", "Enero"];
 $fecha=strftime( "%Y-%m", time() );
-require "../../conection.php";
+require "./conection.php";
 $i=11;
 while($i>=0){
     $sql="SELECT sum(ingresos) as ingresos, sum(egresos)
