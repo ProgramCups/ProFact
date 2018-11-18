@@ -1,0 +1,93 @@
+
+/* Tooltip container */
+.tooltipss {
+    position: relative;
+    display: inline-block;
+    border-bottom: none; /* If you want dots under the hoverable text */
+}
+/*Tooltip-left*/
+/* Tooltip text */
+.tooltipss .tooltimg-left {
+    visibility: hidden;
+    width: auto;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 1px 0;
+    border-radius: 5px;
+
+    /* Position the tooltip text */
+     content: "";
+    position: absolute;
+    top: -100%;
+    z-index: 1;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #555 transparent transparent;
+
+}
+
+/* Tooltip arrow */
+.tooltipss .tooltimg-left::after {
+    content: "";
+    position: absolute;
+    top: 39%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 10px;
+    border-style: solid;
+    border-color:  transparent transparent  transparent transparent ;
+
+}
+
+.tooltipss:hover .tooltimg-left {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+/*Tooltip-bottom*/
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltipss .tooltimg-bottom  {
+    visibility: hidden;
+    width: 300px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 1px 0;
+    border-radius: 5px;
+    position: absolute;
+    /* Position the tooltip text */
+    content: "";
+    position: absolute;
+    top: 15%;
+    z-index: 1;
+    right:150%;
+    margin-top: 5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 #555 #555 #555;
+
+}
+
+/* Tooltip arrow */
+.tooltipss .tooltimg-bottom::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    right: -7%;
+    margin-top: 5px;
+    border-width: 10px;
+    border-style: solid;
+    border-color:  transparent transparent transparent #555;
+
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltipss:hover .tooltimg-bottom  {
+    visibility: visible;
+    opacity: 0.9;
+}
