@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+   
     <head>
        
     </head>
@@ -17,9 +18,11 @@
                     </tr>
                 </thead>  
                 <tbody>
-                   <?php 
+                   <?php
             require "../../conection.php";
-            $sql="SELECT cantidad, p.codigo_producto, p.nombre, precio_por_unidad, total from detalle_factura df JOIN productos p on p.codigo_producto=df.codigo_producto;";
+            $sql="SELECT cantidad, p.codigo_producto, p.nombre, precio_por_unidad, total from detalle_factura df 
+JOIN productos p on p.codigo_producto=df.codigo_producto
+join factura f on df.id_factura=f.id_factura WHERE f.Estado='Abierta';";
             $result=mysqli_query($con,$sql);  
             while($ver2=mysqli_fetch_row($result)){ ?>
             <tr class="border-top">

@@ -138,7 +138,7 @@
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">Facturas</h1>
             
-            <button class="btn btn-dark"><img src="./assets/img/baseline_add_white_18dp.png"></button><!-- BOTON DE AGREGAR FACTURAS !-->
+            
                 </div>
                 <div class="card">
                 <div class="card-deck pt-3 pb-3 pr-3 pl-3">
@@ -159,6 +159,7 @@
     
 </body>
 <script>
+
 $(document).ready(function(){
     $('#invoices_info').load('./PHP/invoices/invoices_info.php');
     $('#table_of_now_invoice').load('./PHP/invoices/table_of_now_invoice.php');
@@ -166,8 +167,5 @@ $(document).ready(function(){
 });
     
 </script>
-
-
-
-
+<script src="./JS/invoices/invoices_features.js"></script>
 </html>
