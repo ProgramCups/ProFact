@@ -5,7 +5,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Titulo</title>
-
         <!-- TABLE SCROLL STYLE!-->
     <style>
         .table-wrapper-scroll-y {
@@ -46,7 +45,7 @@
         require "../../conection.php";
         $sql="SELECT p.codigo_producto, p.nombre,i.cantidad,p.id_unidad ,precio from productos p join inventario i on p.codigo_producto=i.codigo_producto;";
         $result=mysqli_query($con,$sql);
-        $no=1;
+        $n=1;
         while($ver=mysqli_fetch_row($result)){ ?>
             <tr class="border-top">
                 <th scope="row"><?php echo $ver[0];?></th>
@@ -57,12 +56,12 @@
                 <td class="row">
                     <form class="form" method="post">
                         <div class="row">
-                            <input type="number" class="form-control" placeholder="Agregar" style="width:70px;" max="<?php echo $ver[2];?>" value="1" min="1"><button class="btn btn-success btn-sm" type="button"><img src="./assets/img/baseline_add_white_18dpmin.png" "width:1px; height:1px;"></button>
+                            <input type="number" class="form-control" id="productoadd<?php echo $n;?>" placeholder="Agregar" style="width:70px;" max="<?php echo $ver[2];?>" min="1"><button class="btn btn-success btn-sm" type="button" onclick="agregar_productos(<?php echo $n;?>,<?php echo $ver[0];?>,<?php echo $ver[2];?>)"><img src="./assets/img/baseline_add_white_18dpmin.png" "width:1px; height:1px;"></button>
                         </div>
                     </form>
                 </td>
             </tr>
-            <?php }?>
+            <?php $n=$n+1; }?>
     </tbody>
 </table>
 
