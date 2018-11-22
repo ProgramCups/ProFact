@@ -16,6 +16,9 @@ function crear_factura(){
 }
 function cerrar_factura(id){
     cadena="id=" + id;
+    alertify.confirm("Confirmar", "Seguro que desea cerrar la factura?",
+        function( ){
+        
     $.ajax({
 			type:"POST",
             data: cadena,
@@ -31,13 +34,19 @@ function cerrar_factura(id){
 				}
 			}
 		});
+},
+        function(){alertify.error('Cancel');});
+    
 }
- function agregar_productos(num,idd, precio){
+ function agregar_productos(num,idd, precio, canti){
      var id= document.getElementById('codigof').value;
-     var cant= document.getElementById('productoadd'+num).value;
+     var cant= document.getElementById('p'+num).value;
      var cadena="id=" + id + "&idd="+idd+"&cant="+cant+"&precio="+precio;
      alert(cadena);
-    $.ajax({
+    if(cant>canti){
+        alertify.alert("Revise los datos"," Agregos mas producto del disponible, favor revisar los datos");
+    }else{
+        $.ajax({
             type:"POST",
             data:cadena,
 			url:"./PHP/invoices/add_products.php?",
@@ -52,4 +61,4 @@ function cerrar_factura(id){
 				}
 			}
 		});
- }
+    }}

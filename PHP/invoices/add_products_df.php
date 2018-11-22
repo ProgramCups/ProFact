@@ -56,7 +56,7 @@
                 <td class="row">
                     <form class="form" method="post">
                         <div class="row">
-                            <input type="number" class="form-control" id="productoadd<?php echo $n;?>" placeholder="Agregar" style="width:70px;" max="<?php echo $ver[2];?>" min="1"><button class="btn btn-success btn-sm" type="button" onclick="agregar_productos(<?php echo $n;?>,<?php echo $ver[0];?>,<?php echo $ver[2];?>)"><img src="./assets/img/baseline_add_white_18dpmin.png" "width:1px; height:1px;"></button>
+                            <input type="number" class="form-control" id="p<?php echo $n;?>" placeholder="Agregar" style="width:70px;" max="<?php echo $ver[2];?>" min="1"><button class="btn btn-success btn-sm" type="button" onclick="agregar_productos(<?php echo $n;?>,'<?php echo $ver[0];?>',<?php echo $ver[4];?>, <?php echo $ver[2];?>)"><img src="./assets/img/baseline_add_white_18dpmin.png" "width:1px; height:1px;"></button>
                         </div>
                     </form>
                 </td>
