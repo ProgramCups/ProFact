@@ -12,6 +12,7 @@
         <script src="./assets/js/jquery-3.2.1.min.js"></script>
         <script src="./assets/alertifyjs/alertify.min.js"></script>
         <script src="./assets/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <?php include "./PHP/session_start.php"?>
         <!-- Finaliza archivos JS !-->
         <!-- LLamado de librerias CSS !-->
@@ -145,8 +146,9 @@
                    <div class="col-lg-6 col-md-12">
                        <div class="col-12" id="invoices_info"></div>
                        <div class="col-lg-12 col-md-12 pb-3" id="table_of_now_invoice"></div>
+                       <div class="col-lg-12 col-md-12 pb-3"id="total"> </div>
                    </div>
-                   <div class="card col-md-12 col-lg-6 " style="height:310px;" id="add_products_df">
+                   <div class="card col-md-12 col-lg-6 " style="height:600px;" id="add_products_df">
                    </div>
                 </div>
                 </div>
@@ -164,6 +166,8 @@ $(document).ready(function(){
     $('#invoices_info').load('./PHP/invoices/invoices_info.php');
     $('#table_of_now_invoice').load('./PHP/invoices/table_of_now_invoice.php');
     $('#add_products_df').load('./PHP/invoices/add_products_df.php');
+    $('#total').load('./PHP/invoices/total.php');
+    
 });
     
 </script>

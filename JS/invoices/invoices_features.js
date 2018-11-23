@@ -1,3 +1,23 @@
+function actualizar_productos(id,cant, canti){
+    var total=canti-cant;
+    var cadena= "id="+id+"&total="+total;
+      $.ajax({
+			type:"POST",
+            data: cadena,
+			url:"./PHP/invoices/update_products.php",
+			success:function(r){
+				if(r==1){
+                    $('#invoices_info').load('./PHP/invoices/invoices_info.php');  $('#table_of_now_invoice').load('./PHP/invoices/table_of_now_invoice.php');
+                    
+				}else{
+					swal ( "Oops" ,  "Aeroor"+r ,  "error" );
+				}
+			}
+		});
+        $('#add_products_df').load('./PHP/invoices/add_products_df.php');
+}
+
+
 function crear_factura(){
     $.ajax({
 			type:"POST",
@@ -9,7 +29,7 @@ function crear_factura(){
                     $('#table_of_now_invoice').load('./PHP/invoices/table_of_now_invoice.php');
                     $('#add_products_df').load('./PHP/invoices/add_products_df.php');
 				}else{
-					alertify.error("Fallo el servidor :(");
+					swal ( "Oops" ,  "Algo salio mal: ERRORCODE>"+r ,  "error" );
 				}
 			}
 		});
@@ -30,7 +50,7 @@ function cerrar_factura(id){
                     $('#table_of_now_invoice').load('./PHP/invoices/table_of_now_invoice.php');
                     $('#add_products_df').load('./PHP/invoices/add_products_df.php');
 				}else{
-					alertify.error("Fallo el servidor :(");
+					swal ( "Oops" ,  "Algo salio mal: ERRORCODE>"+r ,  "error" );
 				}
 			}
 		});
@@ -39,25 +59,28 @@ function cerrar_factura(id){
     
 }
  function agregar_productos(num,idd, precio, canti){
+     
      var id= document.getElementById('codigof').value;
      var cant= document.getElementById('p'+num).value;
      var cadena="id=" + id + "&idd="+idd+"&cant="+cant+"&precio="+precio;
-     alert(cadena);
     if(cant>canti){
         alertify.alert("Revise los datos"," Agregos mas producto del disponible, favor revisar los datos");
     }else{
+        
         $.ajax({
             type:"POST",
             data:cadena,
 			url:"./PHP/invoices/add_products.php?",
 			success:function(r){
 				if(r==1){
-					alertify.success("Factura Cerrada con exito!");
+                    actualizar_productos(idd,cant,canti);
+					alertify.success("Exito!");
                     $('#invoices_info').load('./PHP/invoices/invoices_info.php');
                     $('#table_of_now_invoice').load('./PHP/invoices/table_of_now_invoice.php');
                     $('#add_products_df').load('./PHP/invoices/add_products_df.php');
 				}else{
-					alertify.error("Fallo el servidor :(");
+
+                    swal ( "Oops" ,  "Algo salio mal: ERRORCODE>"+r ,  "error" );
 				}
 			}
 		});

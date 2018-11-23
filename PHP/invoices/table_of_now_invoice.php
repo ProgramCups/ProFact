@@ -2,10 +2,18 @@
 <html lang="en">
    
     <head>
-       
+       <style>
+        .table-wrapper-scroll-y-md {
+          display: block;
+          max-height: 360px;
+          overflow-y: auto;
+            overflow-x:hidden; 
+          -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
+        </style>
     </head>
     <body >
-            <div class="card">
+            <div class="card table-wrapper-scroll-y-md">
             <table class="table table-hover table-condensed table-borderless">
                 <thead>
                     <tr class="border-bottom">

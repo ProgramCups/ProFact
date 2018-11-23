@@ -9,7 +9,7 @@
     <style>
         .table-wrapper-scroll-y {
           display: block;
-          max-height: 300px;
+          max-height: 600px;
           overflow-y: auto;
             overflow-x:hidden; 
           -ms-overflow-style: -ms-autohiding-scrollbar;
@@ -22,7 +22,7 @@
     <!-- BUSCADOR DE PRODUCTOS!-->
     <div class="pb-2 pt-2 pl-2 ">
     <form class="form-inline my-2 my-lg-0 float-right">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <input class="form-control mr-sm-2" type="search" placeholder="Producto" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
     </form>
     </div>
@@ -43,7 +43,7 @@
     <tbody>
     <?php 
         require "../../conection.php";
-        $sql="SELECT p.codigo_producto, p.nombre,i.cantidad,p.id_unidad ,precio from productos p join inventario i on p.codigo_producto=i.codigo_producto;";
+        $sql="SELECT p.codigo_producto, p.nombre,i.cantidad,p.id_unidad ,precio from productos p join inventario i on p.codigo_producto=i.codigo_producto where i.cantidad>0;";
         $result=mysqli_query($con,$sql);
         $n=1;
         while($ver=mysqli_fetch_row($result)){ ?>
