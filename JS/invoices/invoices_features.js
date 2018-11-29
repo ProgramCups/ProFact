@@ -8,6 +8,7 @@ function actualizar_productos(id,cant, canti){
 			success:function(r){
 				if(r==1){
                     $('#invoices_info').load('./PHP/invoices/invoices_info.php');  $('#table_of_now_invoice').load('./PHP/invoices/table_of_now_invoice.php');
+                    $('#total').load('./PHP/invoices/total.php');
                     
 				}else{
 					swal ( "Oops" ,  "Aeroor"+r ,  "error" );
@@ -15,6 +16,7 @@ function actualizar_productos(id,cant, canti){
 			}
 		});
         $('#add_products_df').load('./PHP/invoices/add_products_df.php');
+        $('#total').load('./PHP/invoices/total.php');
 }
 
 
@@ -28,6 +30,7 @@ function crear_factura(){
                     $('#invoices_info').load('./PHP/invoices/invoices_info.php');
                     $('#table_of_now_invoice').load('./PHP/invoices/table_of_now_invoice.php');
                     $('#add_products_df').load('./PHP/invoices/add_products_df.php');
+                    $('#total').load('./PHP/invoices/total.php');
 				}else{
 					swal ( "Oops" ,  "Algo salio mal: ERRORCODE>"+r ,  "error" );
 				}
@@ -35,7 +38,9 @@ function crear_factura(){
 		});
 }
 function cerrar_factura(id){
-    cadena="id=" + id;
+    var total= document.getElementById('totalf').innerHTML;
+    var cadena="id=" + id+"&total="+total;
+    alert(cadena);
     alertify.confirm("Confirmar", "Seguro que desea cerrar la factura?",
         function( ){
         
@@ -49,6 +54,7 @@ function cerrar_factura(id){
                     $('#invoices_info').load('./PHP/invoices/invoices_info.php');
                     $('#table_of_now_invoice').load('./PHP/invoices/table_of_now_invoice.php');
                     $('#add_products_df').load('./PHP/invoices/add_products_df.php');
+                    $('#total').load('./PHP/invoices/total.php');
 				}else{
 					swal ( "Oops" ,  "Algo salio mal: ERRORCODE>"+r ,  "error" );
 				}
@@ -56,7 +62,7 @@ function cerrar_factura(id){
 		});
 },
         function(){alertify.error('Cancel');});
-    
+    $('#total').load('./PHP/invoices/total.php');
 }
  function agregar_productos(num,idd, precio, canti){
      
@@ -78,6 +84,7 @@ function cerrar_factura(id){
                     $('#invoices_info').load('./PHP/invoices/invoices_info.php');
                     $('#table_of_now_invoice').load('./PHP/invoices/table_of_now_invoice.php');
                     $('#add_products_df').load('./PHP/invoices/add_products_df.php');
+                    $('#total').load('./PHP/invoices/total.php');
 				}else{
 
                     swal ( "Oops" ,  "Algo salio mal: ERRORCODE>"+r ,  "error" );

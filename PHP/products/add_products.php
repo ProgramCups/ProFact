@@ -20,7 +20,7 @@
                 
             }else{
                 $foto="NULL";
-            }echo $foto;
+            }
 	
 
 $sql1="INSERT INTO productos VALUES ('".$codigo."', '".$nombre."', '".$fdvp."', '".$suplidor."', '".$marca."', '".$modelo."', '".$desc."','null',". $precio.",'".$foto."');";
@@ -28,7 +28,8 @@ $sql1="INSERT INTO productos VALUES ('".$codigo."', '".$nombre."', '".$fdvp."', 
     $sql2="INSERT INTO inventario VALUES('".$codigo."',".$ca.", ".$cma.")";
     $result2=mysqli_query($con,$sql2); 
 $result1=mysqli_query($con,$sql1);
-/*
+echo $result1." ".$result2;
+
    if($result2=="1" && $result1=="1"){
        $resultado="1";
        header("Location: ../../products.php?ra=".$resultado);
@@ -37,7 +38,7 @@ $result1=mysqli_query($con,$sql1);
        echo $result1;
        header("Location: ../../products.php?ra=".$resultado);
    }
- ?>*/
+ ?>
 
 
 
