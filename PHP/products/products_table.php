@@ -26,7 +26,6 @@
             <thead>
                 <tr>
                    <th>#</th>
-                   <th scope="col">Imagen</th>
                    <th scope="col">Codigo</th>
                    <th scope="col">Nombre</th>
                    <th scope="col">Fecha de Vencimiento</th>
@@ -67,7 +66,6 @@
                 }
                 
             ?>
-                <td><a class="btn btn-primary border-none" data-toggle="tooltip" title='<?php echo $img;?>'><img src="./assets/img/outline_insert_photo_white_18dp.png"></a><span class="tooltimg-left"></span></td>
                 <td><p><?php echo $ver[0]; ?></p></td>
                 <td><p><?php echo $ver[1]; ?></p></td>
                 <td><p><?php echo $ver[2]; ?></p></td>
@@ -79,7 +77,7 @@
                 <td>
                     <div class="row">
                         <button class="btn btn-warning" data-toggle="modal" data-target="#modificar" onclick="agregardatos(<?php echo "'".$ver[0]."','".$ver[1]."','".$ver[3]."','".$ver[4]."','".$ver[5]."','".$ver[6]."','".$ver[7]."',".$ver[9].",".$ver[10].",'". $ver[2]."','".$ver[11]."'";?>)"><img src="./assets/img/baseline_border_color_white_18dp.png" id="modificarboton"></button>&nbsp;&nbsp;
-                        <button type="button" class="btn btn-danger" onclick="preguntareliminar('<?php echo $ver[0];?>')" data-toggle="modal" data-target="#elim"><img src="./assets/img/baseline_delete_white_18dp.png"></button>
+                        <button type="button" class="btn btn-danger" onclick="eliminarDatos('<?php echo $ver[0];?>')"><img src="./assets/img/baseline_delete_white_18dp.png"></button>
                     </div>
                     <div class="row pt-2">
                         <button class="btn btn-info disabled" data-toggle="tooltip" data-placement="left" title="<h6>Funcion no disponible</h6>"><img src="./assets/img/baseline_info_white_18dp.png" ></button>&nbsp;&nbsp;

@@ -21,13 +21,14 @@ function agregardatos(codigo, nombre, suplidor, marca, modelo, desc, precio, cma
 }
 
 
-function eliminarDatos(){
-    var id=document.getElementById("codigoeliminar").innerHTML;
+function eliminarDatos(id){
 	cadena="id=" + id;
-    
-		$.ajax({
+    alertify.confirm("Seguro que desea eliminar el producto con el codigo: "+id+"?",function(){
+        
+        
+        $.ajax({
 			type:"POST",
-			url:"../../PHP/products/remove_products.php",
+			url: "./PHP/products/remove_products.php",
 			data:cadena,
 			success:function(r){
 				if(r==1){
@@ -38,6 +39,12 @@ function eliminarDatos(){
 				}
 			}
 		});
+    },function(){
+        alertify.error("Accion cancelada");
+    }
+    
+    );
+		
 }
 function preguntareliminar(id){
     document.getElementById("codigoeliminar").innerHTML=id;

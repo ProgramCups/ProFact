@@ -7,9 +7,9 @@ JOIN permisos p on p.codigo_permiso=t.codigo_permiso where codigo_usuario='".$_S
 while($ver=mysqli_fetch_row($result)){
     if($ver[0]=="Configuracion"){
                     echo '<li class="nav-item">
-                        <a class="nav-link btn btn-light text-left border-right" id="Configuracion" href="./configuration.php">
+                        <a class="nav-link btn btn-light text-left border-right disabled" id="Configuracion" href="./configuration.php">
                         <span data-feather="file-text"><img src="./assets/img/baseline_settings_black_18dp.png" class="pb-1"></span>
-                        Configuracion
+                        Configuracion<span class="sr-only">(current)</span><span class="badge badge-pill badge-info float-right">Proximamente!</span>
                         </a>
                     </li>';  
                     }

@@ -15,17 +15,17 @@ while($ver=mysqli_fetch_row($result)){
                     }
                     if($ver[0]=="Pedidos"){
                     echo '<li class="nav-item">
-                    <a class="nav-link btn btn-light text-left border-right" id="Pedidos" href="./orders.php">
+                    <a class="nav-link btn btn-light text-left border-right disabled" id="Pedidos" href="./orders.php">
                     <span data-feather="bar-chart-2"><img src="./assets/img/baseline_event_note_black_18dp.png" class="pb-1"></span>
-                    Pedidos
+                    Pedidos<span class="sr-only">(current)</span><span class="badge badge-pill badge-info float-right">Proximamente!</span>
                     </a>
                 </li>';  
                     }
                     if($ver[0]=="Reportes"){
                     echo '<li class="nav-item">
-                    <a class="nav-link btn btn-light text-left border-right" id="Reportes" href="./reports.php">
+                    <a class="nav-link btn btn-light text-left border-right disabled" id="Reportes" href="./reports.php">
                     <span data-feather="bar-chart-2"><img src="./assets/img/baseline_description_black_18dp.png" class="pb-1"></span>
-                    Reportes
+                    Reportes<span class="sr-only">(current)</span><span class="badge badge-pill badge-info float-right">Proximamente!</span>
                     </a>
                 </li>';  
                     }

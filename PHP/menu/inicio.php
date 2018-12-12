@@ -9,7 +9,7 @@ while($ver=mysqli_fetch_row($result)){
                 if($ver[0]=="Ver estadisticas"){
                     echo "<li class='nav-item'>
                         <a class='nav-link btn btn-light text-left border-right disabled' id='Estadisticas' href='./stats.php'>
-                        <span data-feather='home'><img src='./assets/img/baseline_insert_chart_black_18dp.png' class='pb-1'></span>Estadisticas <span class='sr-only'>(current)</span><span class='badge badge-pill badge-info'>Proximamente!</span>
+                        <span data-feather='home'><img src='./assets/img/baseline_insert_chart_black_18dp.png' class='pb-1'></span>Estadisticas <span class='sr-only'>(current)</span><span class='badge badge-pill badge-info float-right'>Proximamente!</span>
                         </a>
                     </li>";
                     }
